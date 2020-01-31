@@ -85,6 +85,8 @@
         let currentTime = new Date();
         let currentHour = currentTime.getHours();
         let keyDescription = {};
+        renderDescription();
+
         $("#currentDay").html(currentTime);
 
         $(".saveBtn").on("click", function () {
@@ -95,6 +97,13 @@
         })
 
         function renderDescription (){
+          keyDescription = JSON.parse(localStorage.getItem("keyDescription"));
+          console.log($(keyDescription).prop(7));
+          for (let i = 0; i < Object.keys(keyDescription).length; i++) {
+            i+=6;
+            description=$(keyDescription).prop(i);
+            i-=6;
+          }
 
         }
 
