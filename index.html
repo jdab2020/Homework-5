@@ -59,12 +59,9 @@
 
   <script>
     $(document).ready(function () {
-      alert("GET REAADYYY!! ")
       let currentTime = new Date();
       let currentHour = currentTime.getHours();
-      // let currentHour = 7;
       let keyDescription = {};
-      // console.log(localStorage)
       if (localStorage.length !== 0){
         renderDescription()
       }
@@ -85,7 +82,7 @@
           return;
         }
         keyDescription = JSON.parse(localStorage.getItem("keyDescription"));
-        // console.log($(keyDescription).prop(7));
+
         for (let i = 0; i < Object.keys(keyDescription).length; i++) {
           i+=6;
           description=$(keyDescription).prop(i);
@@ -95,22 +92,14 @@
       }
 
       $(".hour").each(function(){
-        // console.log(Number ($(this).prop("id")))
-        // console.log(currentHour)
         if (Number ($(this).prop("id")) < currentHour){
           $(this).addClass("past");
-          // console.log(Number ($(this).prop("id")))
-          // console.log(currentHour)
         }
         else if (Number ($(this).prop("id")) > currentHour){
           $(this).addClass("future");
-          // console.log(Number ($(this).prop("id")))
-          // console.log(currentHour)
         }
         else if (Number ($(this).prop("id")) === currentHour){
           $(this).addClass("present");
-        //   console.log(Number ($(this).prop("id")))
-        //   console.log(currentHour)
         }
       })
 
