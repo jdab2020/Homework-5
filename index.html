@@ -79,6 +79,11 @@
       })
 
       function renderDescription() {
+        let foo = localStorage.getItem("keyDescription");
+
+        if(!foo) {
+          return;
+        }
         keyDescription = JSON.parse(localStorage.getItem("keyDescription"));
         // console.log($(keyDescription).prop(7));
         for (let i = 0; i < Object.keys(keyDescription).length; i++) {
@@ -94,18 +99,18 @@
         // console.log(currentHour)
         if (Number ($(this).prop("id")) < currentHour){
           $(this).addClass("past");
-          console.log(Number ($(this).prop("id")))
-        console.log(currentHour)
+          // console.log(Number ($(this).prop("id")))
+          // console.log(currentHour)
         }
         else if (Number ($(this).prop("id")) > currentHour){
           $(this).addClass("future");
-          console.log(Number ($(this).prop("id")))
-        console.log(currentHour)
+          // console.log(Number ($(this).prop("id")))
+          // console.log(currentHour)
         }
         else if (Number ($(this).prop("id")) === currentHour){
           $(this).addClass("present");
-          console.log(Number ($(this).prop("id")))
-        console.log(currentHour)
+        //   console.log(Number ($(this).prop("id")))
+        //   console.log(currentHour)
         }
       })
 
