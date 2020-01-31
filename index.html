@@ -62,7 +62,7 @@
       let currentHour = currentTime.getHours();
       // let currentHour = 7;
       let keyDescription = {};
-      console.log(localStorage)
+      // console.log(localStorage)
       if (localStorage.length !== 0){
         renderDescription()
       }
@@ -78,7 +78,7 @@
 
       function renderDescription() {
         keyDescription = JSON.parse(localStorage.getItem("keyDescription"));
-        console.log($(keyDescription).prop(7));
+        // console.log($(keyDescription).prop(7));
         for (let i = 0; i < Object.keys(keyDescription).length; i++) {
           i+=6;
           description=$(keyDescription).prop(i);
