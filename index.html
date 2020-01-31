@@ -87,14 +87,24 @@
         }
       }
 
-      $("<textarea>").each(function(){
-        if ($(this).val()<currentHour){
-          $(this).addClass(".past");
+      $(".hour").each(function(){
+        // console.log(Number ($(this).prop("id")))
+        // console.log(currentHour)
+        if (Number ($(this).prop("id")) < currentHour){
+          $(this).addClass("past");
+          console.log(Number ($(this).prop("id")))
+        console.log(currentHour)
         }
-        else if ($(this).val()>currentHour){
-          $(this).addClass(".future");
+        else if (Number ($(this).prop("id")) > currentHour){
+          $(this).addClass("future");
+          console.log(Number ($(this).prop("id")))
+        console.log(currentHour)
         }
-        else $(this).addClass(".present");
+        else if (Number ($(this).prop("id")) === currentHour){
+          $(this).addClass("present");
+          console.log(Number ($(this).prop("id")))
+        console.log(currentHour)
+        }
       })
 
     })
