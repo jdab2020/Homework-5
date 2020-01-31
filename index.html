@@ -60,13 +60,12 @@
     $(document).ready(function () {
       let currentTime = new Date();
       let currentHour = currentTime.getHours();
+      // let currentHour = 7;
       let keyDescription = {};
       console.log(localStorage)
       if (localStorage.length !== 0){
         renderDescription()
       }
-
-      
 
       $("#currentDay").html(currentTime);
 
@@ -83,10 +82,20 @@
         for (let i = 0; i < Object.keys(keyDescription).length; i++) {
           i+=6;
           description=$(keyDescription).prop(i);
-          $("#"+i).text(i+":00  " + description)
+          $("#"+i).text(i +":00  " + description)
           i-=6;
         }
       }
+
+      $("<textarea>").each(function(){
+        if ($(this).val()<currentHour){
+          $(this).addClass(".past");
+        }
+        else if ($(this).val()>currentHour){
+          $(this).addClass(".future");
+        }
+        else $(this).addClass(".present");
+      })
 
     })
 
